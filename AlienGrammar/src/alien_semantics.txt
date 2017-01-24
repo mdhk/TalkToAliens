@@ -1,0 +1,33 @@
+- Location grid
+
+|-----------------------|
+| 1,1 | 2,1 | 3,1 | 4,1 |   possible locations for objects
+| 1,2 | 2,2 | 3,2 | 4,2 |
+| 1,3 | 2,3 | 3,3 | 4,3 |
+| 1,4 | 2,4 | 3,4 | 4,4 |
+|≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈|  (<== downstream) river (upstream ==>)
+| 1,5 | 2,5 | 3,5 | 4,5 |
+| 1,6 | 2,6 | 3,6 | 4,6 |
+| 1,7 | 2,7 | 3,7 | 4,7 |
+| 1,8 | 2,8 | 3,8 | 4,8 |   possible locations for objects
+|-----------------------|
+
+- Semantics format
+
+Example:    [[obj: chair, loc:[1,1], dirA:[2,1],
+            [rabbit, loc:[3,1], dirA:[4,1]]]
+    
+    means:  'chair object in A1, faces towards B1' +
+            'rabbit object in C1, faces towards C1'
+    
+    alien sentence (1): wu-bo ke-po zu-bo
+        'the chair, facing upstream, is located
+        further downstream than the rabbit, facing
+        upstream'
+    
+    alien sentence (2): zu-bo ke-bo wu-bo
+        'the rabbit, facing upstream, is located
+        further upstream than the chair, facing
+        upstream'
+
+Note: alien sentences can be polysemic!
