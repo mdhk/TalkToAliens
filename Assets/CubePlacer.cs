@@ -62,7 +62,7 @@ public class CubePlacer : MonoBehaviour {
 		Debug.Log (sit.Sentence);
 
 		Transform transform = GetComponent<Transform> ();
-		transform.position = new Vector3 (sit.Obj.Location.X, 0, sit.Obj.Location.Y);
+		transform.position = new Vector3 (0, 0, 0);
 
 		var subj = GetGameObject (sit.Subj.Name, true);
 		var obj = GetGameObject (sit.Obj.Name, false);
@@ -70,14 +70,19 @@ public class CubePlacer : MonoBehaviour {
 		subj.SetActive (true);
 		obj.SetActive (true);
 
-		subj.transform.Translate(new Vector3 (sit.Subj.Location.X, 0, sit.Subj.Location.Y));
-		obj.transform.Translate(new Vector3 (sit.Obj.Location.X, 0, sit.Obj.Location.Y));
+		subj.transform.Translate(new Vector3 (sit.Subj.Location.X*20, 1, SkipRiver(sit.Subj.Location.Y)*10));
+			obj.transform.Translate(new Vector3 (sit.Obj.Location.X*20, 1, SkipRiver(sit.Obj.Location.Y)*10));
 
-		Debug.Log (sit.Subj.Location.X);
-		Debug.Log (sit.Subj.Location.Y);
-		Debug.Log (sit.Obj.Location.X);
-		Debug.Log (sit.Obj.Location.Y);
+		Debug.Log (subj.transform.position.z);
+		Debug.Log (obj.transform.position.z);
 
+	}
+
+	int SkipRiver (int Y_loc) {
+		if (Y_loc >= 5) {
+			Y_loc = Y_loc + 2;
+		}
+		return Y_loc;
 	}
 
 	// Update is called once per frame

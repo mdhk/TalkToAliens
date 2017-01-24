@@ -1,0 +1,239 @@
+fileFormatVersion: 2
+guid: 9acdc22d0b109da489562249d9f01217
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: coniglietto:Back_1
+    100002: coniglietto:Back_2
+    100004: coniglietto:Back_3
+    100006: coniglietto:Back_4
+    100008: coniglietto:Back_stabilize
+    100010: coniglietto:controls
+    100012: coniglietto:Head
+    100014: coniglietto:Head_end
+    100016: coniglietto:joint10
+    100018: coniglietto:joint11
+    100020: coniglietto:joint12
+    100022: coniglietto:joint13
+    100024: coniglietto:joint14
+    100026: coniglietto:joint15
+    100028: coniglietto:joint9
+    100030: coniglietto:L_BoundAnkle
+    100032: coniglietto:L_BoundBall
+    100034: coniglietto:L_BoundHip
+    100036: coniglietto:L_BoundKnee
+    100038: coniglietto:L_BoundToe
+    100040: coniglietto:L_mano_jnt
+    100042: coniglietto:L_manoTip_jnt
+    100044: coniglietto:Neck
+    100046: coniglietto:Pelvis
+    100048: coniglietto:R_BoundAnkle
+    100050: coniglietto:R_BoundBall
+    100052: coniglietto:R_BoundHip
+    100054: coniglietto:R_BoundKnee
+    100056: coniglietto:R_BoundToe
+    100058: coniglietto:R_mano_jnt
+    100060: coniglietto:R_manoTip_jnt
+    100062: coniglietto:skeleton
+    100064: coniglietto:superMover
+    100066: //RootNode
+    400000: coniglietto:Back_1
+    400002: coniglietto:Back_2
+    400004: coniglietto:Back_3
+    400006: coniglietto:Back_4
+    400008: coniglietto:Back_stabilize
+    400010: coniglietto:controls
+    400012: coniglietto:Head
+    400014: coniglietto:Head_end
+    400016: coniglietto:joint10
+    400018: coniglietto:joint11
+    400020: coniglietto:joint12
+    400022: coniglietto:joint13
+    400024: coniglietto:joint14
+    400026: coniglietto:joint15
+    400028: coniglietto:joint9
+    400030: coniglietto:L_BoundAnkle
+    400032: coniglietto:L_BoundBall
+    400034: coniglietto:L_BoundHip
+    400036: coniglietto:L_BoundKnee
+    400038: coniglietto:L_BoundToe
+    400040: coniglietto:L_mano_jnt
+    400042: coniglietto:L_manoTip_jnt
+    400044: coniglietto:Neck
+    400046: coniglietto:Pelvis
+    400048: coniglietto:R_BoundAnkle
+    400050: coniglietto:R_BoundBall
+    400052: coniglietto:R_BoundHip
+    400054: coniglietto:R_BoundKnee
+    400056: coniglietto:R_BoundToe
+    400058: coniglietto:R_mano_jnt
+    400060: coniglietto:R_manoTip_jnt
+    400062: coniglietto:skeleton
+    400064: coniglietto:superMover
+    400066: //RootNode
+    7400000: morso
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: morso
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: coniglietto:controls
+        weight: 1
+      - path: coniglietto:controls/coniglietto:superMover
+        weight: 1
+      - path: coniglietto:skeleton
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2/coniglietto:Back_3
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2/coniglietto:Back_3/coniglietto:Back_4
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2/coniglietto:Back_3/coniglietto:Back_4/coniglietto:Back_stabilize
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2/coniglietto:Back_3/coniglietto:Back_4/coniglietto:Back_stabilize/coniglietto:L_mano_jnt
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2/coniglietto:Back_3/coniglietto:Back_4/coniglietto:Back_stabilize/coniglietto:L_mano_jnt/coniglietto:L_manoTip_jnt
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2/coniglietto:Back_3/coniglietto:Back_4/coniglietto:Back_stabilize/coniglietto:Neck
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2/coniglietto:Back_3/coniglietto:Back_4/coniglietto:Back_stabilize/coniglietto:Neck/coniglietto:Head
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2/coniglietto:Back_3/coniglietto:Back_4/coniglietto:Back_stabilize/coniglietto:Neck/coniglietto:Head/coniglietto:Head_end
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2/coniglietto:Back_3/coniglietto:Back_4/coniglietto:Back_stabilize/coniglietto:Neck/coniglietto:Head/coniglietto:joint9
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2/coniglietto:Back_3/coniglietto:Back_4/coniglietto:Back_stabilize/coniglietto:Neck/coniglietto:Head/coniglietto:joint9/coniglietto:joint10
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2/coniglietto:Back_3/coniglietto:Back_4/coniglietto:Back_stabilize/coniglietto:Neck/coniglietto:Head/coniglietto:joint9/coniglietto:joint10/coniglietto:joint11
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2/coniglietto:Back_3/coniglietto:Back_4/coniglietto:Back_stabilize/coniglietto:Neck/coniglietto:Head/coniglietto:joint9/coniglietto:joint10/coniglietto:joint11/coniglietto:joint12
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2/coniglietto:Back_3/coniglietto:Back_4/coniglietto:Back_stabilize/coniglietto:Neck/coniglietto:Head/coniglietto:joint9/coniglietto:joint10/coniglietto:joint11/coniglietto:joint12/coniglietto:joint13
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2/coniglietto:Back_3/coniglietto:Back_4/coniglietto:Back_stabilize/coniglietto:Neck/coniglietto:Head/coniglietto:joint14
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2/coniglietto:Back_3/coniglietto:Back_4/coniglietto:Back_stabilize/coniglietto:Neck/coniglietto:Head/coniglietto:joint14/coniglietto:joint15
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2/coniglietto:Back_3/coniglietto:Back_4/coniglietto:Back_stabilize/coniglietto:R_mano_jnt
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:Back_1/coniglietto:Back_2/coniglietto:Back_3/coniglietto:Back_4/coniglietto:Back_stabilize/coniglietto:R_mano_jnt/coniglietto:R_manoTip_jnt
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:L_BoundHip
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:L_BoundHip/coniglietto:L_BoundKnee
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:L_BoundHip/coniglietto:L_BoundKnee/coniglietto:L_BoundAnkle
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:L_BoundHip/coniglietto:L_BoundKnee/coniglietto:L_BoundAnkle/coniglietto:L_BoundBall
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:L_BoundHip/coniglietto:L_BoundKnee/coniglietto:L_BoundAnkle/coniglietto:L_BoundBall/coniglietto:L_BoundToe
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:R_BoundHip
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:R_BoundHip/coniglietto:R_BoundKnee
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:R_BoundHip/coniglietto:R_BoundKnee/coniglietto:R_BoundAnkle
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:R_BoundHip/coniglietto:R_BoundKnee/coniglietto:R_BoundAnkle/coniglietto:R_BoundBall
+        weight: 1
+      - path: coniglietto:skeleton/coniglietto:Pelvis/coniglietto:R_BoundHip/coniglietto:R_BoundKnee/coniglietto:R_BoundAnkle/coniglietto:R_BoundBall/coniglietto:R_BoundToe
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
