@@ -11,13 +11,13 @@ public class CameraMover : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.LeftArrow))
-			transform.Rotate (0, -5, 0);
-		if (Input.GetKeyDown (KeyCode.RightArrow))
-			transform.Rotate (0, 5, 0);
-		if (Input.GetKeyDown (KeyCode.UpArrow))
-			transform.Translate (0, 0, 5);
-		if (Input.GetKeyDown (KeyCode.DownArrow))
-			transform.Translate (0, 0, -5);
+		if (Input.GetKey (KeyCode.LeftArrow))
+			transform.Rotate (0, -25 * Time.deltaTime, 0);
+		if (Input.GetKey (KeyCode.RightArrow))
+			transform.Rotate (0, 25 * Time.deltaTime, 0);
+		if (Input.GetKey (KeyCode.UpArrow))
+			transform.Translate (0, 0, 25 * Time.deltaTime);
+		if (Input.GetKey (KeyCode.DownArrow))
+			transform.Translate (0, 0, -25 * Time.deltaTime);
 	}
 }
