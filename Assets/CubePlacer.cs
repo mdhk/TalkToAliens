@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class CubePlacer : MonoBehaviour {
 
-	// Game entities
+    /* --- Class variables --- */
+	// Cartoon figures
 	public GameObject rabbit1;
 	public GameObject rabbit2;
 	public GameObject chair1;
@@ -14,7 +15,9 @@ public class CubePlacer : MonoBehaviour {
 	public GameObject duck2;
 	public GameObject frog1;
 	public GameObject frog2;
-	public GameObject subj;
+
+    // Game entities
+    public GameObject subj;
 	public GameObject obj;
 	public GameObject alien;
 	public Camera MainCamera;
@@ -23,11 +26,15 @@ public class CubePlacer : MonoBehaviour {
     // GUI
 	public TextMesh sentence;
 
-    // Grammatica
-    Situation sit;
+    // Grammar and semantics
+    GrammarReader grammar;
+    List<Situation> situationList;
+    int situationId;
     Entity subjEntity;
     Entity objEntity;
 
+    /* --- Helper methods --- */
+    // Select game entities
 	GameObject GetGameObject(string name, bool subject) {
 		GameObject obj;
 		switch (name) {
@@ -68,13 +75,6 @@ public class CubePlacer : MonoBehaviour {
 		return obj;
 	}
 
-	// Use this for initialization
-	void Start () {
-		// Maak alien vast aan camera
-		GenerateSituation ();
-		alien.transform.parent = MainCamera.transform;
-	}
-
 	// TODO: ervoor zorgen dat entities niet in de rivier gaan staan en liefst niet uit beeld verdwijnen
 	// ik wilde 2 optellen bij alle Y-coordinaten groter gelijk aan 5 (want tussen 4 en 5 zit de rivier), maar dit werkt niet
 	// update: volgens mij werkt het toch wel?
@@ -103,35 +103,40 @@ public class CubePlacer : MonoBehaviour {
         child.rotation = Quaternion.identity;
     }
 
-    void GenerateSituation() {
-		GrammarReader grammar = GetComponent<GrammarReader> ();
+    void GenerateSituation(Situation sit) {
 
-		sit = grammar.GetRandomSituation ();
+        // Ruim oude entities op
+        if (subj != null && obj != null)
+        {
+            // Deactiveer
+            subj.SetActive(false);
+            obj.SetActive(false);
+        }
+
+        // Nieuwe game entities
+        subj = GetGameObject(sit.Subj.Name, true);
+        obj = GetGameObject(sit.Obj.Name, false);
         subjEntity = sit.Subj;
         objEntity = sit.Obj;
-		// TODO: zorgen dat er een logische opvolging van situaties (?) is -- iig niet twee dezelfde situaties na elkaar
-		// elke zin opslaan in lijst en dan bij elke nieuwe situatie checken of ie niet al in de lijst staat ofzo?
 
+        // Verhoog counter
 		counter += 1;
 
-		Transform transform = GetComponent<Transform> ();
-		transform.position = new Vector3 (0, 0, 0);
-
-		subj = GetGameObject (sit.Subj.Name, true);
-		obj = GetGameObject (sit.Obj.Name, false);
-
+        // Pas transforms aan
+		subj.transform.position = new Vector3 (0, 3, 0);
+        obj.transform.position = new Vector3(0, 3, 0);
 		subj.SetActive (true);
 		obj.SetActive (true);
-
 		subj.transform.Translate(new Vector3 (sit.Subj.Location.X*20, 0, SkipRiver(sit.Subj.Location.Y)*10));
 		obj.transform.Translate(new Vector3 (sit.Obj.Location.X*20, 0, SkipRiver(sit.Obj.Location.Y)*10));
 
-        // Update directions
+        // Update oriëntatie
         UndoTurn(subj);
         UndoTurn(obj);
         Turn(subj, subjEntity.Location, subjEntity.Direction);
         Turn(obj, objEntity.Location, objEntity.Direction);
 
+        // Schrijf gegevens naar console
         Debug.Log ("=== SITUATION " + counter + " ===");
 		Debug.Log (
             "subj loc: (" + sit.Subj.Location.X + "," + sit.Subj.Location.Y + "), " +
@@ -141,24 +146,77 @@ public class CubePlacer : MonoBehaviour {
 			"abs. pos.: (" + obj.transform.position.x + "," + obj.transform.position.y + "," + obj.transform.position.z + "), " +
             "dir: (" + sit.Obj.Direction.X + " , " + sit.Obj.Direction.Y + ")");
 
-
+        // Stel tekst in
 		sentence.text = sit.Sentence;
 	}
 
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown ("space")) {
-			// reset locatie van entities
-			Vector3 pos = new Vector3(0, 3, 0);
-			subj.transform.position = pos;
-			obj.transform.position = pos;
+    // Maak lijst met 1000 nieuwe situaties
+    void MakeSituationList()
+    {
+        situationList = new List<Situation>();
+        for (int i = 0; i <= 1000; i++)
+        {
+            situationList.Add(grammar.GetRandomSituation());
+        }
+    }
 
-			// deactiveer entities
-			subj.SetActive (false);
-			obj.SetActive (false);
+    /* --- Standard methods --- */
+    // Use this for initialization
+    void Start()
+    {
+        // Initialiseer grammarticaobject en situatielijst
+        grammar = GetComponent<GrammarReader>();
+        situationList = new List<Situation>();
 
-			// maak nieuwe situatie
-			GenerateSituation ();
-		}
+        // Initialiseer situatielijst
+        MakeSituationList();
+
+        foreach(Situation sit in situationList)
+        {
+            Debug.Log(sit.Sentence);
+        }
+
+        // Maak eerste situatie
+        GenerateSituation(situationList[situationId]);
+
+        // Maak alien vast aan camera
+        alien.transform.parent = MainCamera.transform;
+    }
+
+
+    // Update is called once per frame
+    void Update () {
+
+        //Debug.Log(situationId);
+
+        // PUNT: ga naar volgende situatie
+		if (Input.GetKeyDown (KeyCode.Period)) {
+            // Verhoog situatieteller
+            situationId++;
+
+            // Situaties op?
+            if (situationId >= 999)
+            {
+                MakeSituationList();
+                situationId = 0;
+            }
+
+            // Ga naar situatie
+            GenerateSituation(situationList[situationId]);
+        }
+
+        // KOMMA: ga naar vorige situatie
+        if (Input.GetKeyDown(KeyCode.Comma))
+        {
+            // Verlaag teller
+            situationId--;
+
+            // Aan het begin van de lijst?
+            if (situationId <= 0)
+                situationId = 0;
+            
+            // Ga naar betreffende situatie
+            GenerateSituation(situationList[situationId]);
+        }
 	}
 }

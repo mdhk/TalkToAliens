@@ -65,10 +65,14 @@ public class GrammarReader : MonoBehaviour {
 
 	public TextAsset grammar;
 	public List<Situation> situations;
+    System.Random rand;
 
-	// Use this for initialization
-	void Start () {
-		string[] lines = grammar.text.Split (new char[] { '\n' });
+    // Use this for initialization
+    void Start () {
+        // Make random generator
+        rand = new System.Random();
+
+        string[] lines = grammar.text.Split (new char[] { '\n' });
 		situations = new List<Situation> ();
 		for (int i = 1; i < lines.Length; i++) { 
 			string[] columns = lines[i].Split (new char[] { ',' });
@@ -79,7 +83,6 @@ public class GrammarReader : MonoBehaviour {
 	}
 
 	public Situation GetRandomSituation() {
-		System.Random rand = new System.Random ();
 		int r = rand.Next (situations.Count);
 		return situations [r];
 	}
